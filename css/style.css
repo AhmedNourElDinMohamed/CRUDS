@@ -1,0 +1,44 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #222;
+  color: #fff;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Inputs */
+.price {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  appearance: none;
+}
+
+.price input {
+  width: 20%;
+}
+
+#total {
+  background-color: #a00d02;
+  padding: 5px 2px;
+  border-radius: 4px;
+}
+
+#total::before {
+  content: "Total : ";
+}
+
+.custom-btn {
+  transition: all 0.3s ease-in-out;
+}
+.custom-btn:hover {
+  letter-spacing: 2px;
+}

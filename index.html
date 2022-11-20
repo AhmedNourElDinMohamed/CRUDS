@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <!-- Main style -->
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <section id="cruds" class="py-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="header text-center">
+              <h2 class="fs-1">CRUD</h2>
+              <p class="fs-2 text-white-50">PRODUCT MANAGEMENT SYSTEM</p>
+            </div>
+            <div class="inputs mb-4">
+              <input
+                class="form-control bg-dark text-bg-dark mb-3 border-0"
+                id="name"
+                type="text"
+                placeholder="Product Name..."
+              />
+              <div class="price mb-3">
+                <input
+                  class="form-control bg-dark text-bg-dark border-0"
+                  type="number"
+                  min="1"
+                  id="price"
+                  placeholder="price"
+                  onkeyup="getTotal()"
+                />
+                <input
+                  class="form-control bg-dark text-bg-dark border-0"
+                  type="number"
+                  min="1"
+                  id="taxes"
+                  placeholder="taxes"
+                  onkeyup="getTotal()"
+                />
+                <input
+                  class="form-control bg-dark text-bg-dark border-0"
+                  type="number"
+                  min="1"
+                  id="ads"
+                  placeholder="ads"
+                  onkeyup="getTotal()"
+                />
+                <input
+                  class="form-control bg-dark text-bg-dark border-0"
+                  type="number"
+                  min="1"
+                  id="discount"
+                  placeholder="discount"
+                  onkeyup="getTotal()"
+                />
+                <small class="fw-bold p-2" id="total"></small>
+              </div>
+              <input
+                class="form-control bg-dark text-bg-dark border-0 mb-3"
+                id="count"
+                placeholder="Product Count..."
+                type="number"
+                min="1"
+              />
+              <input
+                class="form-control bg-dark text-bg-dark border-0 mb-3"
+                id="category"
+                placeholder="category"
+                type="text"
+              />
+              <button
+                class="fw-bold btn btn-success custom-btn w-100"
+                id="create"
+                onclick="creatProduct()"
+              >
+                Create
+              </button>
+            </div>
+            <div class="outputs">
+              <div class="search-wrapper mb-3">
+                <input
+                  id="search"
+                  class="form-control bg-dark text-bg-dark border-0 mb-3"
+                  type="text"
+                  placeholder="Search By Name"
+                  onkeyup="search(this.value)"
+                />
+                <div class="d-flex justify-content-between">
+                  <button
+                    onclick="searchByType(this.id)"
+                    class="fw-bold btn btn-warning w-50 me-3"
+                    id="searchByName"
+                  >
+                    Search By Name
+                  </button>
+                  <button
+                    onclick="searchByType(this.id)"
+                    class="fw-bold btn btn-warning w-50"
+                    id="searchByCategory"
+                  >
+                    Search By Category
+                  </button>
+                </div>
+              </div>
+              <div class="mb-3" id="delete-all"></div>
+              <table class="table table-dark table-hover">
+                <thead>
+                  <tr class="text-center">
+                    <th scope="col">ID</th>
+                    <th scope="col">Title</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Taxes</th>
+                    <th scope="col">Ads</th>
+                    <th scope="col">Discount</th>
+                    <th scope="col">category</th>
+                    <th scope="col">Update</th>
+                    <th scope="col">Delete</th>
+                  </tr>
+                </thead>
+                <tbody id="table-body"></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script src="js/script.js" defer></script>
+  </body>
+</html>
